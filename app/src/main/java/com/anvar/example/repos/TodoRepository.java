@@ -7,17 +7,16 @@ import com.anvar.example.util.ApiBuilder;
 import java.util.List;
 
 import retrofit2.Call;
-import retrofit2.Retrofit;
 
-class TodRepository {
-    private static final TodRepository ourInstance = new TodRepository();
+public class TodoRepository {
+    private static final TodoRepository ourInstance = new TodoRepository();
     private TodoApi api;
 
-    static TodRepository getInstance() {
+    public static TodoRepository getInstance() {
         return ourInstance;
     }
 
-    private TodRepository() {
+    private TodoRepository() {
         api = ApiBuilder.create(TodoApi.class);
     }
 

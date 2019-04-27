@@ -36,9 +36,11 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.TodoViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull TodoViewHolder holder, int position) {
-        if (todos.get(position) == null) return;
-        holder.checkBox.setText(todos.get(position).title);
-        holder.checkBox.setChecked(todos.get(position).isCompleted);
+        Todo todo = todos.get(position);
+        if (todo == null) return;
+
+        holder.checkBox.setText(todo.title);
+        holder.checkBox.setChecked(todo.isCompleted);
     }
 
     @Override
@@ -47,12 +49,12 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.TodoViewHolder
     }
 
     class TodoViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.todo_checkbox)
         CheckBox checkBox;
 
         public TodoViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(itemView);
+            checkBox = itemView.findViewById(R.id.todo_checkbox);
         }
     }
 }

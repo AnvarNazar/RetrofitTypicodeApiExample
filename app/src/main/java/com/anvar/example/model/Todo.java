@@ -9,6 +9,6 @@ public class Todo {
     public long userId;
     @SerializedName("title")
     public String title;
-    @SerializedName("isCompleted")
+    @SerializedName("completed")
     public boolean isCompleted;
 }

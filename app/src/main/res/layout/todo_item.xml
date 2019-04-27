@@ -12,7 +12,8 @@
         android:id="@+id/todo_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:textSize="14sp"
         tools:checked="true"
+        android:clickable="false"
         tools:text="quis ut nam facilis et officia qui" />
 </LinearLayout>
