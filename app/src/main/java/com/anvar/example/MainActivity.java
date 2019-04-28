@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         mViewModel.getTodoLiveData().observe(this, new Observer<List<Todo>>() {
             @Override
             public void onChanged(List<Todo> todos) {
+                mViewModel.getIsLoading().postValue(false);
                 initRecyclerView(todos);
             }
         });
