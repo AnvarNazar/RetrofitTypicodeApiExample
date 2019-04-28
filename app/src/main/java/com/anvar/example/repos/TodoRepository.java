@@ -10,7 +10,6 @@ import com.anvar.example.api.TodoApi;
 import com.anvar.example.model.Todo;
 import com.anvar.example.util.ApiBuilder;
 
-import java.lang.invoke.MutableCallSite;
 import java.util.List;
 
 import retrofit2.Call;
@@ -37,7 +36,7 @@ public class TodoRepository {
         api.getTodos().enqueue(new Callback<List<Todo>>() {
             @Override
             public void onResponse(@NonNull Call<List<Todo>> call, @NonNull Response<List<Todo>> response) {
-                todoListLiveData.postValue(response.body());
+                todoListLiveData.setValue(response.body());
             }
 
             @Override

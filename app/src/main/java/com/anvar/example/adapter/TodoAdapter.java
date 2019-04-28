@@ -14,9 +14,6 @@ import com.anvar.example.model.Todo;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.TodoViewHolder> {
 
     private Context mContext;
@@ -51,9 +48,8 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.TodoViewHolder
     class TodoViewHolder extends RecyclerView.ViewHolder {
         CheckBox checkBox;
 
-        public TodoViewHolder(@NonNull View itemView) {
+        TodoViewHolder(@NonNull View itemView) {
             super(itemView);
-            ButterKnife.bind(itemView);
             checkBox = itemView.findViewById(R.id.todo_checkbox);
         }
     }

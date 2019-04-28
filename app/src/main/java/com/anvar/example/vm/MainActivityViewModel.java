@@ -13,14 +13,13 @@ import java.util.List;
 public class MainActivityViewModel extends ViewModel {
     private static final String TAG = "MainActivityViewModel";
 
-    private TodoRepository repository = TodoRepository.getInstance();
-
     private MutableLiveData<Boolean> isLoading = new MutableLiveData<>();
     private LiveData<List<Todo>> todoLiveData;
 
     public MainActivityViewModel() {
         super();
         isLoading.setValue(true);
+        TodoRepository repository = TodoRepository.getInstance();
         todoLiveData = repository.getTodos();
     }
 
